@@ -1,0 +1,3 @@
+= Rubycious
+
+A Ruby gem wrapper to the del.icio.us API. nuff' said.
