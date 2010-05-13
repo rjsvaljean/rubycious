@@ -2,4 +2,5 @@ pkg
 Manifest
 tmp
 doc
+config
 *.gem
