@@ -1,3 +1,11 @@
 = Rubycious
 
 A Ruby gem wrapper to the del.icio.us API. nuff' said.
+
+== Examples
+post_client= Rubycious::Client::Post.new(:username => "delicious_username", :password => "delicious_password")
+post_client.all(:tag => "testing")
+post_client.recent
+
+tag_client= Rubycious::Client::Tag.new(:username => "delicious_username", :password => "delicious_password")
+tag_client.all
