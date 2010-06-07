@@ -44,11 +44,17 @@ module Rubycious::Client
     # @option options [String] :url  URL
     # @option options [String] :hashes  "c0...d+2f970...fe+..+2f...9fe"
     # @option options [String] :meta  yes/no whether or not to get the meta hash tag
-    # @return [Array<Rubycious::Post>] 
+    # @return [Array<Rubycious::Post>, Rubycious::Post] 
     # @see Time#iso8601
-    def find_latest(options)
+    def get(options = {})
       response= handle_errors { self.class.get('/get', :query => options)}
-      response["posts"]["post"].collect{|i| Rubycious::Post.new(i)}
+      if response["posts"]["post"].is_a?(Hash)
+        Rubycious::Post.new response["posts"]["post"]
+      elsif response["posts"]["post"].is_a?(Array)
+        response["posts"]["post"].collect{|i| Rubycious::Post.new(i)}
+      else
+        nil
+      end
     end
 
     # Use for searching all URLs
@@ -69,7 +75,7 @@ module Rubycious::Client
     #                     significant field of the bookmark changes.
     # @return [Array<Rubycious::Post>]
     # @see Time#iso8601
-    def find(options)
+    def all(options = {})
       response= handle_errors { self.class.get('/all', :query => options)}
       response["posts"]["post"].collect{|i| Rubycious::Post.new(i)}
     end
@@ -79,7 +85,7 @@ module Rubycious::Client
     # @option options [String] :tag |optional| "httparty"
     # @option options [String] :count (15) |optional| Default: 15 Max: 100 
     # @return [Array<Rubycious::Post>] 
-    def recent(options = nil)
+    def recent(options = {})
       response= handle_errors { self.class.get('/recent', :query => options)}
       response["posts"]["post"].collect{|i| Rubycious::Post.new(i)}
     end
@@ -88,7 +94,7 @@ module Rubycious::Client
     # @param [Hash] options to filter URLs(all optional)
     # @option options [String] :tag |optional| "tutorial"
     # @return [Array<Rubycious::PostDate>] 
-    def dates(options = nil)
+    def dates(options = {})
       response= handle_errors{ self.class.get('/dates', :query => options)}
       response["dates"]["date"].collect{|i| Rubycious::PostDate.new(i)}
     end

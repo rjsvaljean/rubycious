@@ -6,11 +6,11 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ratan Sebastian"]
-  s.date = %q{2010-05-13}
+  s.date = %q{2010-05-14}
   s.description = %q{Ruby wrapper to the del.icio.us API}
   s.email = %q{rjsvaljean@gmail.com}
-  s.extra_rdoc_files = ["README.rdoc", "lib/client.rb", "lib/client_helper.rb", "lib/errors.rb", "lib/rubycious.rb"]
-  s.files = ["README.rdoc", "Rakefile", "config/auth.yml", "lib/client.rb", "lib/client_helper.rb", "lib/errors.rb", "lib/rubycious.rb", "rubycious.gemspec", "Manifest"]
+  s.extra_rdoc_files = ["LICENSE.rdoc", "README.rdoc", "lib/client.rb", "lib/client_helper.rb", "lib/errors.rb", "lib/rubycious.rb"]
+  s.files = ["LICENSE.rdoc", "README.rdoc", "Rakefile", "config/auth.yml", "features/post_client.feature", "lib/client.rb", "lib/client_helper.rb", "lib/errors.rb", "lib/rubycious.rb", "Manifest", "rubycious.gemspec"]
   s.homepage = %q{http://github.com/rjsvlajean/rubycious}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Rubycious", "--main", "README.rdoc"]
   s.require_paths = ["lib"]
