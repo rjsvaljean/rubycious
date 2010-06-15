@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email = %q{rjsvaljean@gmail.com}
   s.extra_rdoc_files = ["LICENSE.rdoc", "README.rdoc", "lib/client.rb", "lib/client_helper.rb", "lib/errors.rb", "lib/rubycious.rb"]
   s.files = ["LICENSE.rdoc", "README.rdoc", "Rakefile", "config/auth.yml", "features/post_client.feature", "lib/client.rb", "lib/client_helper.rb", "lib/errors.rb", "lib/rubycious.rb", "Manifest", "rubycious.gemspec"]
-  s.homepage = %q{http://github.com/rjsvlajean/rubycious}
+  s.homepage = %q{http://github.com/rjsvaljean/rubycious}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Rubycious", "--main", "README.rdoc"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{rubycious}
