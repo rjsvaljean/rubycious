@@ -91,6 +91,6 @@ module Rubycious
   end
 end
 
-load File.join(ROOT_DIR, 'lib', 'errors.rb')
-load File.join(ROOT_DIR, 'lib', 'client_helper.rb')
-load File.join(ROOT_DIR, 'lib', 'client.rb')
+require File.join(ROOT_DIR, 'lib', 'errors.rb')
+require File.join(ROOT_DIR, 'lib', 'client_helper.rb')
+require File.join(ROOT_DIR, 'lib', 'client.rb')

@@ -15,6 +15,11 @@ module Rubycious::Errors
   def handle_errors
     response= yield
     if response.keys.include?("result")
+      if response["result"].keys.include?("code")
+        if response["result"]["code"].match("access denied")
+          raise AuthenticationError, "Access denied to the API"
+        end
+      end
       if response["result"].match("done")
         response
       else
